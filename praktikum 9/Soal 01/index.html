@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="Jerry Livano 2172002">
+    <title>Document</title>
+</head>
+<style>
+    #isi {
+        width: 70px;
+        height: 70px;
+        background-color: #5b7b8a;
+        border-radius: 100%;
+        text-align: center;
+        line-height: 70px;
+        font-size: 20px;
+    }
+    #container {
+        justify-content: center;
+        display: flex;
+    }
+</style>
+<body>
+    <script>
+        function HasilInputan(input, hasil){   
+            for (i=input; i>0; i--){
+                document.write("<div id='container'>");
+                for (j=input; j>0; j--){
+                    if (input>3 && hasil<10){
+                        document.write("<div id='isi'>" + 0 + hasil + "</div>");
+                        hasil = hasil - 1;
+                    }
+                    else {
+                        document.write("<div id='isi'>" + hasil + "</div>");
+                        hasil = hasil - 1;
+                    }
+                }
+                document.write("</div>");
+            }
+        }
+    </script>
+    <script>
+        let input = parseInt(prompt("Berapa NxN bola yang ingin dibuat?"));
+        let hasil = input*input;
+        HasilInputan(input, hasil);
+    </script>
+</body>
+</html>

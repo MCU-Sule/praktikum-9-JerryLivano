@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="Jerry Livano 2172002">
+    <title>Document</title>
+</head>
+<style>
+    td {
+        border: 1px solid black;
+        font-size: 20px;
+        text-align: center;
+        padding: 5px;
+    }
+    #header {
+        font-weight: bold;
+    }
+</style>
+<body>
+    <script>
+        let nama = [];
+        let warna = [];
+        let inputnama, inputwarna, cariwarna;
+        let cari = 0;
+        while (true){
+            inputnama = prompt("Masukkan nama:");
+            if (inputnama != "stop"){
+                inputwarna = prompt("Masukkan warna kesukaan (english):");
+                nama.push(inputnama);
+                warna.push(inputwarna);
+            }
+            else {
+                cariwarna = prompt("Masukkan warna yang ingin dicari:");
+                break;
+            }
+        }
+        for (i=0; i<nama.length; i++){
+            if (warna[i].toLowerCase()==cariwarna.toLowerCase()){
+                cari++;
+            }
+        }
+    </script>
+    <table cellspacing="0" cellpadding="0"> 
+        <tr>
+            <td id="header" bgcolor="grey">Nama</td>
+            <td id="header" bgcolor="grey">Warna kesukaan</td>
+        </tr>
+        <script>
+            for (j=0; j<nama.length; j++){
+                document.write("<tr><td bgcolor='" + warna[j] + "'>" + nama[j] + "</td><td bgcolor='" + warna[j] + "'>" + warna[j] + "</td>");
+            }
+        </script>
+    </table><br>
+    <script>
+        if (cari>0){
+            document.write("Ada " + cari + " orang yang menyukai warna " + cariwarna + " yaitu ");
+            for (k=0; k<nama.length; k++){
+                if (warna[k].toLowerCase()==cariwarna.toLowerCase()){
+                    document.write(nama[k] + " ");
+                }
+            }
+        }
+        else {
+            document.write("Tidak ada yang menyukai warna tersebut.");
+        } 
+    </script>
+</body>
+</html>

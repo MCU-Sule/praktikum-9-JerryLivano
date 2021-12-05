@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="Jerry Livano 2172002">
+    <title>Document</title>
+</head>
+<style>
+    td {
+        text-align: center;
+        padding: 2px;
+        border: 1px solid black;
+        border-top: none;
+        border-left: none;
+        width: 2000px;
+        height: 20px;
+    }
+</style>
+<body>
+    <script>
+        function tabel5x5(angka){
+            document.write("<table cellspacing='0' cellpadding='0' border='1'>");
+            for (i=0; i<5; i++){
+                document.write("<tr>");
+                for (j=0; j<5; j++){
+                        document.write("<td id='" + angka + "'>" + angka + "</td>");
+                        angka += 1;
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+    </script>
+    <script>
+        let input = parseInt(prompt("minta berapa obstacle?"));
+        while (true){
+            if (input>0 && input<25){
+                break;
+            }
+            else {
+                alert("Angka harus 0 < x < 25");
+                input = parseInt(prompt("minta berapa obstacle?"));
+            }
+        }
+        tabel5x5(0);
+        let acak = [];
+        let random;
+        while (true){
+            random = Math.floor(Math.random()*25);
+            if (acak.includes(random)){
+                random = Math.floor(Math.random()*25);
+            }
+            else if (acak.length == input){
+                break;
+            }
+            else {
+                acak.push(random);
+                document.getElementById(random).style.backgroundColor="#82210d";
+                document.getElementById(random).style.color="white";
+            }
+        }
+    </script>
+</body>
+</html>
